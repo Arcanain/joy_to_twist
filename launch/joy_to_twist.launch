@@ -9,8 +9,6 @@
   </node>
 
   <!-- joy to twist converter -->
-  <node pkg="joy_to_twist" name="joy_to_twist" type="joy_to_twist">
-    <param name="mode" value="$(arg mode)"/>
-  </node>
+  <node pkg="joy_to_twist" name="joy_to_twist" type="joy_to_twist"/>
 
 </launch>
