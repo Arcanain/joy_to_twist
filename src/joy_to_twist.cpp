@@ -28,15 +28,14 @@ void JoyToTwist::joyCallback(const sensor_msgs::Joy& msg)
   geometry_msgs::Twist cmd_vel;
 
   cmd_vel.linear.x = msg.axes[1] * 0.5;
-  cmd_vel.angular.z = msg.axes[3] * 0.5;
+  cmd_vel.angular.z = msg.axes[3] * 1.0;
 
   vel_pub.publish(cmd_vel);
 }
 
-
 int main(int argc, char *argv[])
 {
-  ros::init(argc, argv, "TEST");
+  ros::init(argc, argv, "joy_to_twist");
   JoyToTwist joytotwist;
 
   ros::spin();
