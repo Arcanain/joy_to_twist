@@ -22,13 +22,18 @@ JoyToTwist::JoyToTwist()
 
 void JoyToTwist::joyCallback(const sensor_msgs::Joy& msg)
 {
+  /*
   if (msg.axes.size() != 8) {
     return;
   }
+  */
   geometry_msgs::Twist cmd_vel;
 
   cmd_vel.linear.x = msg.axes[1] * 0.5;
-  cmd_vel.angular.z = msg.axes[3] * 1.0;
+  // 無線の時
+  cmd_vel.angular.z = msg.axes[2] * 1.0;
+  // 有線の時
+  //cmd_vel.angular.z = msg.axes[3] * 1.0;
 
   vel_pub.publish(cmd_vel);
 }
