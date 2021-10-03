@@ -98,3 +98,13 @@ PS4コントローラーで動作確認
 # 使用目的
 - PS4コントローラーでロボットを走行させて、mapを生成
 - 自律移動区間以外での人によるロボットの操作時
+
+# rviz
+
+- 前進後退
+
+https://user-images.githubusercontent.com/52307432/135751420-a6cce934-9136-4a69-aa4a-4aeb9fcb7296.MOV
+
+- 右旋回左旋回
+
+https://user-images.githubusercontent.com/52307432/135751437-a6d4b871-743c-44d1-852c-0b3abbc54777.MOV
