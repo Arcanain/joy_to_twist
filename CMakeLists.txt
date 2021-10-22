@@ -21,3 +21,6 @@ include_directories(
 
 add_executable(joy_to_twist src/joy_to_twist.cpp)
 target_link_libraries(joy_to_twist ${catkin_LIBRARIES})
+
+add_executable(safety src/safety.cpp)
+target_link_libraries(safety ${catkin_LIBRARIES})

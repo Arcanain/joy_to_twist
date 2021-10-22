@@ -31,9 +31,9 @@ void JoyToTwist::joyCallback(const sensor_msgs::Joy& msg)
 
   cmd_vel.linear.x = msg.axes[1] * 0.5;
   // 無線の時
-  cmd_vel.angular.z = msg.axes[2] * 1.0;
+  //cmd_vel.angular.z = msg.axes[2] * 1.0;
   // 有線の時
-  //cmd_vel.angular.z = msg.axes[3] * 1.0;
+  cmd_vel.angular.z = msg.axes[3] * 0.5;
 
   vel_pub.publish(cmd_vel);
 }
