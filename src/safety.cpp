@@ -60,10 +60,10 @@ int main(int argc, char** argv)
 
     ros::NodeHandle nh;
     state_sub                      = nh.subscribe("/state_obstacle_avoidance", 10, state_obstacle_avoidance_callback);
-    cmd_vel_joystick_sub           = nh.subscribe("/cmd_vel_joystick", 10, cmd_vel_joystick_callback);
-    cmd_vel_obstacle_avoidance_sub = nh.subscribe("/cmd_vel_obstacle_avoidance", 10, cmd_vel_obstacle_avoidance_callback);
+    cmd_vel_joystick_sub           = nh.subscribe("/cmd_vel_joystick", 100, cmd_vel_joystick_callback);
+    cmd_vel_obstacle_avoidance_sub = nh.subscribe("/cmd_vel_obstacle_avoidance", 100, cmd_vel_obstacle_avoidance_callback);
 
-    cmd_vel_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
+    cmd_vel_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 100);
 
     ros::spin();
 

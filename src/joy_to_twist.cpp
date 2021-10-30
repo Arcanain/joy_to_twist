@@ -16,8 +16,8 @@ public:
 
 JoyToTwist::JoyToTwist()
 {
-    joy_sub = nh.subscribe("/joy", 10, &JoyToTwist::joyCallback, this);
-    vel_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
+    joy_sub = nh.subscribe("/joy", 100, &JoyToTwist::joyCallback, this);
+    vel_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 100);
 }
 
 void JoyToTwist::joyCallback(const sensor_msgs::Joy& msg)
@@ -29,7 +29,7 @@ void JoyToTwist::joyCallback(const sensor_msgs::Joy& msg)
   */
   geometry_msgs::Twist cmd_vel;
 
-  cmd_vel.linear.x = msg.axes[1] * 0.5;
+  cmd_vel.linear.x = msg.axes[1] * 0.2;
   // 無線の時
   //cmd_vel.angular.z = msg.axes[2] * 1.0;
   // 有線の時
