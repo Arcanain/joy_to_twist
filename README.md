@@ -1,4 +1,26 @@
 # joy_to_twist
+
+# FlowChart
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Initialize ROS Node: joy_to_twist]
+    B --> C[Create JoyToTwist Object]
+    C --> D[Subscribe to /joy Topic]
+    D --> E[Advertise /cmd_vel_joystick Publisher]
+    E --> F[Enter ROS Spin Loop]
+    F --> G[Wait for Joystick Input]
+    G -->|Joy Input Received| H[joyCallback]
+    H --> I[Check if Axes Size is Valid]
+    I -->|Invalid| J[Ignore Message]
+    I -->|Valid| K[Convert Joy Input to Twist Message]
+    K --> L[Publish Twist Message to /cmd_vel_joystick]
+    L --> F
+    J --> F
+
+
+```
+
 # インストール
 必要なパッケージは以下
 ```bash
